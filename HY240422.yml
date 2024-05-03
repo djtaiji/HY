@@ -1,0 +1,374 @@
+# DNS 配置可自行修改
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+dns:
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 114.114.114.114
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+# 当前 13 个主流协议节点配置模版，按需求修改，如不需要使用某协议节点，则无需删除，确保代理分流中没有该节点即可
+proxies:
+- name: vless-quick                  # 可以自定义节点名称
+  type: vless
+  server: 109.104.152.101                             # 解析的域名或IP
+  port: 13982                                 # 自定义端口
+  uuid: 85beb960-236b-4634-81ce-6ad66652f928   # 自定义 UUID
+  network: tcp
+  udp: true
+  tls: true
+  flow: 
+  servername: itunes.apple.com                        # 自定义回落域名
+  reality-opts: 
+    public-key: HjmsLPRaQqSqtdMMpIpmpoJOKhC0rAOUCHXnz0E89RE    # Reality public-key
+    short-id: 22f6b74f02cc88a6                        # Reality short-id
+  client-fingerprint: chrome                  # 自定义浏览器指纹
+
+- name: vless-reality-grpc                      # 可以自定义节点名称
+  type: vless
+  server: 1.2.3.4                               # 解析的域名或IP
+  port: 12345                                   # 自定义端口
+  uuid: 335ec5dd-61b1-4413-980e-5e009968f633    # 自定义 UUID
+  network: grpc
+  tls: true
+  udp: true
+  flow:
+  client-fingerprint: chrome                    # 自定义浏览器指纹
+  servername: sega.com                          # 自定义回落域名
+  grpc-opts:
+    grpc-service-name: "misaka"                 # 自定义的字符
+  reality-opts:
+    public-key: Aqp9oy2EFi4NNfRMZa3I3HdGhHbOIiSDZ8L28UCF73k    # Reality public-key
+    short-id: 24410d1c                          # Reality short-id
+
+- name: vless-xtls-rprx-vision                 # 可以自定义节点名称
+  type: vless
+  server: www.misaka.rest                      # 解析的域名
+  port: 12345                                  # 自定义端口
+  uuid: 5f74f86b-3ee8-44f4-adc4-6666be3d315    # 自定义 UUID
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+
+- name: vless-ws-tls                               # 可以自定义节点名称
+  type: vless
+  server: www.misaka.rest                          # 解析的 IP / 域名或优选 IP / 域名
+  port: 12345                                      # 自定义端口
+  uuid: 3cc9a51c-db76-4ad2-a76b-8cb993bddb73       # 自定义 UUID
+  udp: true
+  tls: true
+  network: ws
+  servername: www.misaka.rest                      # SNI 域名，与下面 Host 一致
+  ws-opts:
+    path: "/?ed=2048"                              # 自定义 path 路径
+    headers:
+      Host: www.misaka.rest                        # Host 域名，与上面 server 字段的地址一致
+
+- name: vless-ws                                   # 可以自定义节点名称
+  type: vless
+  server: www.misaka.rest                          # 解析的 IP / 域名或优选 IP / 域名
+  port: 8880                                       # 自定义端口
+  uuid: 77a571fb-4fd2-4b37-8596-1b7d9728bb5c       # 自定义 UUID
+  udp: true
+  tls: false
+  network: ws
+  servername: www.misaka.rest                      # SNI 域名，与下面 host 一致
+  ws-opts:
+    path: "/?ed=2048"                              # 自定义 path 路径
+    headers:
+      Host: www.misaka.rest                        # Host 域名，与上面 server 字段的地址一致
+
+- name: vmess-ws-tls                               # 可以自定义节点名称
+  type: vmess
+  server: www.misaka.rest                          # 解析的 IP / 域名或优选 IP / 域名
+  port: 12345                                      # 自定义端口
+  uuid: 3cc9a51c-db76-4ad2-a76b-8cb993bddb73       # 自定义 UUID
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: www.misaka.rest                      # SNI 域名，与下面 host 一致
+  ws-opts:
+    path: "/?ed=2048"                              # 自定义 path 路径
+    headers:
+      Host: www.misaka.rest                        # Host 域名，与上面 server 字段的地址一致
+
+- name: vmess-ws                                   # 可以自定义节点名称
+  type: vmess
+  server: www.misaka.rest                          # 解析的 IP / 域名或优选 IP / 域名
+  port: 8880                                       # 自定义端口
+  uuid: 77a571fb-4fd2-4b37-8596-1b7d9728bb5c       # 自定义 UUID
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: ws
+  servername: www.misaka.rest                      # SNI 域名，与下面 Host 一致
+  ws-opts:
+    path: "/?ed=2048"                              # 自定义 path 路径
+    headers:
+      Host: www.misaka.rest                        # Host 域名，与上面 server 字段的地址一致
+
+- name: hysteria11                                  # 可以自定义节点名称
+  type: hysteria
+  server: 108.181.5.133                                  # 服务器本地 IP
+  port: 26022                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
+  auth-str: dongtaiwang.com                                 # 自定义认证密码
+  alpn:
+    - h3
+  protocol: udp                                    # 自定义协议：udp / wechat-video / faketcp
+  up: 20                                           # 自定义带宽上传限制
+  down: 100                                        # 自定义带宽下载限制
+  sni: bing.com                                # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
+  fast-open: true
+
+- name: hysteria12                                  # 可以自定义节点名称
+  type: hysteria
+  server: 109.104.152.194                                 # 服务器本地 IP
+  port: 58510                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
+  auth-str: dongtaiwang.com                                 # 自定义认证密码
+  alpn:
+    - h3
+  protocol: udp                                    # 自定义协议：udp / wechat-video / faketcp
+  up: 20                                           # 自定义带宽上传限制
+  down: 100                                        # 自定义带宽下载限制
+  sni: bing.com                                # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
+  fast-open: true
+
+- name: hysteria13                                  # 可以自定义节点名称
+  type: hysteria
+  server: 62.210.243.131                                  # 服务器本地 IP
+  port: 18702                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
+  auth-str: dongtaiwang.com                                 # 自定义认证密码
+  alpn:
+    - h3
+  protocol: udp                                    # 自定义协议：udp / wechat-video / faketcp
+  up: 20                                           # 自定义带宽上传限制
+  down: 100                                        # 自定义带宽下载限制
+  sni: bing.com                                # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true   # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
+  fast-open: true
+    
+- name: hysteria14                                  # 可以自定义节点名称
+  type: hysteria
+  server: 109.104.152.194                                  # 服务器本地 IP
+  port: 58510                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
+  auth-str: dongtaiwang.com                                 # 自定义认证密码
+  alpn:
+    - h3
+  protocol: udp                                    # 自定义协议：udp / wechat-video / faketcp
+  up: 20                                           # 自定义带宽上传限制
+  down: 100                                        # 自定义带宽下载限制
+  sni: bing.com                                # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
+  fast-open: true
+
+- name: hysteria21                                  # 节点名称
+  type: hysteria2
+  server: 104.192.224.140                                 # 服务器 IP
+  port: 40391                                       # 节点端口，目前暂不支持端口跳跃
+  password: dongtaiwang.com                              # 节点认证密码
+  sni: www.bing.com                             # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
+  
+- name: hysteria22                            # 节点名称
+  type: hysteria2
+  server: 104.192.224.141                                 # 服务器 IP
+  port: 40391                                      # 节点端口，目前暂不支持端口跳跃
+  password: dongtaiwang.com                              # 节点认证密码
+  sni: www.bing.com                             # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改
+
+- name: hysteria23                            # 节点名称
+  type: hysteria2
+  server: 104.192.224.141                                 # 服务器 IP
+  port: 40391                                      # 节点端口，目前暂不支持端口跳跃
+  password: dongtaiwang.com                              # 节点认证密码
+  sni: www.bing.com                             # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true 
+
+- name: hysteria24                            # 节点名称
+  type: hysteria2
+  server: 104.192.224.141                                 # 服务器 IP
+  port: 40391                                      # 节点端口，目前暂不支持端口跳跃
+  password: dongtaiwang.com                              # 节点认证密码
+  sni: www.bing.com                             # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true 
+- name: hysteria-singbox1                                # 可以自定义节点名称
+  type: hysteria
+  server: 64.31.55.72                                  # 服务器本地 IP
+  port: 55661                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
+  auth-str: dongtaiwang.com                                 # 自定义认证密码
+  alpn:
+    - h3
+  protocol: udp                                    # 自定义协议：udp / wechat-video / faketcp
+  up: 20                                           # 自定义带宽上传限制
+  down: 100                                        # 自定义带宽下载限制
+  sni: bing.com                                # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
+  fast-open: true
+- name: hysteria2-singbox1                            # 节点名称
+  type: hysteria2
+  server: 64.31.55.72                                 # 服务器 IP
+  port: 33229                                      # 节点端口，目前暂不支持端口跳跃
+  password: dongtaiwang.com                              # 节点认证密码
+  sni: bing.com                             # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true 
+- name: hysteria2-quick1                            # 节点名称
+  type: hysteria2
+  server: 109.104.152.89                                 # 服务器 IP
+  port: 22441                                      # 节点端口，目前暂不支持端口跳跃
+  password: dongtaiwang.com                              # 节点认证密码
+  sni: www.bing.com                             # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true 
+- name: ss-quick3
+  type: ss
+  server: 109.104.152.186
+  port: 11223
+  cipher: 2022-blake3-chacha20-poly1305
+  password: "7/bb9x3TJQ4Y5SRA/Al3OdwxIk4uf3Jg8N9wDQg+Uto="
+  smux:
+    enabled: true
+    protocol: smux
+    max-connections: 1
+    min-streams: 4
+    statistic: false
+    only-tcp: false
+    padding: true
+    brutal-opts:
+      enabled: true
+      up: 11
+      down: 55
+- name: ss-quick4
+  type: ss
+  server: 109.104.152.186
+  port: 11223
+  cipher: 2022-blake3-chacha20-poly1305
+  password: "7/bb9x3TJQ4Y5SRA/Al3OdwxIk4uf3Jg8N9wDQg+Uto="
+  smux:
+    enabled: true
+    protocol: smux
+    max-connections: 1
+    min-streams: 4
+    statistic: false
+    only-tcp: false
+    padding: true
+    brutal-opts:
+      enabled: true
+      up: 11
+      down: 55
+- name: tuic-meta2
+  server: 74.63.233.74
+  port: 33441
+  type: tuic
+  uuid: a258065f-9502-4fe6-b3ed-cf7440e25150
+  password: dongtaiwang.com
+  alpn: [h3]
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
+- name: warp-wireguard                                       # 可以自定义节点名称
+  type: wireguard         
+  server: 162.159.193.10                                     # 可自定义优选 EndPoint IP，与下方端口相对应
+  port: 2408                                                 # 可自定义优选 EndPoint IP，与上方 IP 相对应
+  ip: 172.16.0.2
+  ipv6: 2606:4700:190:814e:7de3:5ddb:9d3e:9359               # warp 的私有 ipv6 地址，如删除本行，表示仅IPV4
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: gK3C8ijdVlT7sd5fsdf5ssdfgsdfgsdfgobT2U+rgHo=  # 获取 warp 的 私钥
+  udp: true
+# 分流组可自行创建或添加，proxies 参数下的节点名称，按需求自行增减，确保出现的节点名称在代理协议中可查找
+proxy-groups:
+- name: 负载均衡
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies:
+    - hysteria11 
+    - hysteria12
+    - hysteria13
+    - hysteria14
+    - hysteria21 
+    - hysteria22
+    - hysteria23
+    - hysteria24
+    - hysteria-singbox1
+    - hysteria2-singbox1
+    - vless-quick
+    - hysteria2-quick1
+    - ss-quick3
+    - tuic-meta2
+- name: 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+    - hysteria11 
+    - hysteria12
+    - hysteria13
+    - hysteria14
+    - hysteria21 
+    - hysteria22
+    - hysteria23
+    - hysteria24
+    - hysteria-singbox1
+    - hysteria2-singbox1
+    - vless-quick
+    - hysteria2-quick1
+    - ss-quick3
+    - tuic-meta2
+      
+- name: 🌍选择代理
+  type: select
+  proxies:
+    - 负载均衡                                            # 自定义添加的节点名称
+    - 自动选择
+    - DIRECT
+    - hysteria11 
+    - hysteria12
+    - hysteria13
+    - hysteria14
+    - hysteria21 
+    - hysteria22
+    - hysteria23
+    - hysteria24
+    - hysteria-singbox1
+    - hysteria2-singbox1
+    - vless-quick
+    - hysteria2-quick1
+    - ss-quick3
+    - tuic-meta2
+    
+# 代理规则可自行添加 
+rules:
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - GEOIP,CN,DIRECT
+  - GEOIP,LAN,DIRECT
+  - MATCH,🌍选择代理
