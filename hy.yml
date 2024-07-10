@@ -350,20 +350,20 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-#    - hysteria11 
-#    - hysteria12
-    - hysteria13
+    - hysteria11 
+    - hysteria12
+#    - hysteria13
 #    - hysteria14
-#    - hysteria21 
+    - hysteria21 
 #    - hysteria22
-    - hysteria23
+#    - hysteria23
 #    - hysteria24
 #    - hysteria-singbox1
 #    - hysteria2-singbox1
 #    - vless-quick
 #    - hysteria2-quick1
-    - ss-quick3
-    - ss-quick4
+#    - ss-quick3
+#    - ss-quick4
 #    - hysteria-meta2
 #    - tuic-meta2_1
 #    - tuic-meta2_2
@@ -376,20 +376,20 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-#    - hysteria11 
-#    - hysteria12
-    - hysteria13
+    - hysteria11 
+    - hysteria12
+#    - hysteria13
 #    - hysteria14
-#    - hysteria21 
+    - hysteria21 
 #    - hysteria22
-    - hysteria23
+#    - hysteria23
 #    - hysteria24
 #    - hysteria-singbox1
 #    - hysteria2-singbox1
 #    - vless-quick
 #    - hysteria2-quick1
-    - ss-quick3
-    - ss-quick4
+#    - ss-quick3
+#    - ss-quick4
 #    - hysteria-meta2
 #    - tuic-meta2_1
 #    - tuic-meta2_2
@@ -408,20 +408,20 @@ proxy-groups:
     - 负载均衡                                            # 自定义添加的节点名称
     - 自动选择
     - DIRECT
-#    - hysteria11 
-#    - hysteria12
-    - hysteria13
+    - hysteria11 
+    - hysteria12
+#   - hysteria13
 #    - hysteria14
-#    - hysteria21 
+    - hysteria21 
 #    - hysteria22
-    - hysteria23
+#    - hysteria23
 #    - hysteria24
 #    - hysteria-singbox1
 #    - hysteria2-singbox1
 #    - vless-quick
 #    - hysteria2-quick1
-    - ss-quick3
-    - ss-quick4
+#    - ss-quick3
+#    - ss-quick4
 #    - hysteria-meta2
 #    - tuic-meta2_1
 #    - tuic-meta2_2
