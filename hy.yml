@@ -135,8 +135,8 @@ proxies:
 
 - name: hysteria11                                  # 可以自定义节点名称
   type: hysteria
-  server: 62.210.243.131                                  # 服务器本地 IP
-  port: 18702                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
+  server: 38.135.52.192                                  # 服务器本地 IP
+  port: 23456                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
   auth-str: dongtaiwang.com                                 # 自定义认证密码
   alpn:
     - h3
@@ -191,8 +191,8 @@ proxies:
 
 - name: hysteria21                                  # 节点名称
   type: hysteria2
-  server: 51.159.2.179                                 # 服务器 IP
-  port: 23499                                       # 节点端口，目前暂不支持端口跳跃
+  server: 166.1.18.178                                 # 服务器 IP
+  port: 23456                                       # 节点端口，目前暂不支持端口跳跃
   password: dongtaiwang.com                              # 节点认证密码
   sni: www.bing.com                             # SNI 域名或自签证书的三方域名
   skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
@@ -215,8 +215,8 @@ proxies:
 
 - name: hysteria24                            # 节点名称
   type: hysteria2
-  server: 104.192.224.141                                 # 服务器 IP
-  port: 40391                                      # 节点端口，目前暂不支持端口跳跃
+  server: hy3.3124845.xyz                                 # 服务器 IP
+  port: 443                                      # 节点端口，目前暂不支持端口跳跃
   password: dongtaiwang.com                              # 节点认证密码
   sni: www.bing.com                             # SNI 域名或自签证书的三方域名
   skip-cert-verify: true 
