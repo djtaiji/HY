@@ -351,13 +351,13 @@ proxy-groups:
   interval: 300
   proxies:
     - hysteria11 
-    - hysteria12
+#    - hysteria12
 #    - hysteria13
 #    - hysteria14
     - hysteria21 
 #    - hysteria22
 #    - hysteria23
-#    - hysteria24
+    - hysteria24
 #    - hysteria-singbox1
 #    - hysteria2-singbox1
 #    - vless-quick
@@ -377,13 +377,13 @@ proxy-groups:
   tolerance: 50
   proxies:
     - hysteria11 
-    - hysteria12
+#    - hysteria12
 #    - hysteria13
 #    - hysteria14
     - hysteria21 
 #    - hysteria22
 #    - hysteria23
-#    - hysteria24
+    - hysteria24
 #    - hysteria-singbox1
 #    - hysteria2-singbox1
 #    - vless-quick
@@ -409,13 +409,13 @@ proxy-groups:
     - 自动选择
     - DIRECT
     - hysteria11 
-    - hysteria12
+#    - hysteria12
 #   - hysteria13
 #    - hysteria14
     - hysteria21 
 #    - hysteria22
 #    - hysteria23
-#    - hysteria24
+    - hysteria24
 #    - hysteria-singbox1
 #    - hysteria2-singbox1
 #    - vless-quick
