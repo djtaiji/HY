@@ -410,7 +410,7 @@ proxy-groups:
     - DIRECT
     - hysteria11 
     - hysteria12
-   - hysteria13
+    - hysteria13
     - hysteria14
     - hysteria21 
     - hysteria22
