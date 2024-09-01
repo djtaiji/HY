@@ -191,8 +191,8 @@ proxies:
 
 - name: hysteria21                                  # 节点名称
   type: hysteria2
-  server: 166.1.18.178                                 # 服务器 IP
-  port: 23456                                       # 节点端口，目前暂不支持端口跳跃
+  server: 207.90.239.157                                 # 服务器 IP
+  port: 3400,20000-30000                                       # 节点端口，目前暂不支持端口跳跃
   password: dongtaiwang.com                              # 节点认证密码
   sni: www.bing.com                             # SNI 域名或自签证书的三方域名
   skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
@@ -351,12 +351,12 @@ proxy-groups:
   interval: 300
   proxies:
     - hysteria11 
-#    - hysteria12
-#    - hysteria13
-#    - hysteria14
+    - hysteria12
+    - hysteria13
+    - hysteria14
     - hysteria21 
-#    - hysteria22
-#    - hysteria23
+    - hysteria22
+    - hysteria23
     - hysteria24
 #    - hysteria-singbox1
 #    - hysteria2-singbox1
@@ -377,12 +377,12 @@ proxy-groups:
   tolerance: 50
   proxies:
     - hysteria11 
-#    - hysteria12
-#    - hysteria13
-#    - hysteria14
+    - hysteria12
+    - hysteria13
+    - hysteria14
     - hysteria21 
-#    - hysteria22
-#    - hysteria23
+    - hysteria22
+    - hysteria23
     - hysteria24
 #    - hysteria-singbox1
 #    - hysteria2-singbox1
@@ -409,12 +409,12 @@ proxy-groups:
     - 自动选择
     - DIRECT
     - hysteria11 
-#    - hysteria12
-#   - hysteria13
-#    - hysteria14
+    - hysteria12
+   - hysteria13
+    - hysteria14
     - hysteria21 
-#    - hysteria22
-#    - hysteria23
+    - hysteria22
+    - hysteria23
     - hysteria24
 #    - hysteria-singbox1
 #    - hysteria2-singbox1
