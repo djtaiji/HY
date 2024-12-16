@@ -129,7 +129,7 @@ proxies:
   network: ws
   servername: none                      # SNI 域名，与下面 Host 一致
   ws-opts:
-    path:"github.com/Alvin9999"              # 自定义 path 路径
+    path: "github.com/Alvin9999"              # 自定义 path 路径
     headers:
       Host: none                        # Host 域名，与上面 server 字段的地址一致
 
