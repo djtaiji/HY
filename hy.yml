@@ -127,11 +127,11 @@ proxies:
   tls: false
   skip-cert-verify: true
   network: ws
-  servername:                       # SNI 域名，与下面 Host 一致
+  servername: none                      # SNI 域名，与下面 Host 一致
   ws-opts:
-    path:                              # 自定义 path 路径
+    path:"github.com/Alvin9999"              # 自定义 path 路径
     headers:
-      Host:                         # Host 域名，与上面 server 字段的地址一致
+      Host: none                        # Host 域名，与上面 server 字段的地址一致
 
 # - name: hysteria11                                  # 可以自定义节点名称
 #   type: hysteria
