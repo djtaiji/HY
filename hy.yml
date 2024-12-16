@@ -29,7 +29,7 @@ dns:
 
 # 当前 13 个主流协议节点配置模版，按需求修改，如不需要使用某协议节点，则无需删除，确保代理分流中没有该节点即可
 proxies:
-- name: dongtaiwang1                      # vless-reality-vision 可以自定义节点名称
+- name: dongtaiwang2                      # vless-reality-vision 可以自定义节点名称
   type: vless
   server: 185.22.153.73                             # 解析的域名或IP
   port: 25835                                 # 自定义端口
@@ -43,22 +43,7 @@ proxies:
     public-key: JaUyzihmZ70WZdjNflneJnr99G-TXXtqDBeSNAQzHBc       # Reality public-key
     short-id: 'aff1f4dc'                      # Reality short-id
   client-fingerprint: chrome                  # 自定义浏览器指纹
-  
-- name: dongtaiwang2                      # vless-reality-vision 可以自定义节点名称
-  type: vless
-  server: 45.154.207.99                             # 解析的域名或IP
-  port: 39758                                 # 自定义端口
-  uuid: 5acdac89-6c30-41f2-b1b7-919cd14a899f   # 自定义 UUID
-  network: tcp
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: www.yahoo.com                        # 自定义回落域名
-  reality-opts: 
-    public-key: 8GY9a6_1hQ_kaUwikH4nryX5G1N6WTh1reX_Zdqwcmk       # Reality public-key
-    short-id: '02a5f089'                      # Reality short-id
-  client-fingerprint: chrome                  # 自定义浏览器指纹
-  
+   
 # - name:  vless-reality-grpc                     # vless-reality-grpc 可以自定义节点名称
 #   type: vless
 #   server: 1.2.3.4                               # 解析的域名或IP
@@ -131,22 +116,22 @@ proxies:
 #     headers:
 #       Host: www.misaka.rest                        # Host 域名，与上面 server 字段的地址一致
 
-# - name: vmess-meta2_151                              # vmess-ws 可以自定义节点名称
-#   type: vmess
-#   server: 104.26.9.22                          # 解析的 IP / 域名或优选 IP / 域名
-#   port: 8080                                       # 自定义端口
-#   uuid: ef8c954e-014f-4b36-8273-9b5086afab34       # 自定义 UUID
-#   alterId: 0
-#   cipher: auto
-#   udp: true
-#   tls: false
-#   skip-cert-verify: true
-#   network: ws
-#   servername: dual-nothing-prep-exit.trycloudflare.com                      # SNI 域名，与下面 Host 一致
-#   ws-opts:
-#     path: "ef8c954e-014f-4b36-8273-9b5086afab34-vm"                             # 自定义 path 路径
-#     headers:
-#       Host: dual-nothing-prep-exit.trycloudflare.com                        # Host 域名，与上面 server 字段的地址一致
+- name: dongtaiwang1                               # vmess-ws 可以自定义节点名称
+  type: vmess
+  server: 45.154.207.99                            # 解析的 IP / 域名或优选 IP / 域名
+  port: 2052                                       # 自定义端口
+  uuid: 0084b5d0-8966-4398-87f8-d5d8b64aa356       # 自定义 UUID
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  servername:                       # SNI 域名，与下面 Host 一致
+  ws-opts:
+    path: "github.com/Alvin9999"                             # 自定义 path 路径
+    headers:
+      Host:                         # Host 域名，与上面 server 字段的地址一致
 
 # - name: hysteria11                                  # 可以自定义节点名称
 #   type: hysteria
