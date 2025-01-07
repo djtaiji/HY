@@ -32,7 +32,7 @@ proxies:
 - name: dongtaiwang1                      # vless-reality-vision 可以自定义节点名称
   type: vless
   server: 185.22.153.73                             # 解析的域名或IP
-  port: 25835                                 # 自定义端口
+  port: 25090                                 # 自定义端口
   uuid: af7f07dc-d726-4b1e-967d-dbb6c594999f   # 自定义 UUID
   network: tcp
   udp: true
@@ -238,10 +238,10 @@ proxies:
   
 - name: dongtaiwang_ss
   type: ss
-  server: 185.22.155.228
-  port: 23456
+  server: 109.104.154.146
+  port: 34567
   cipher: aes-256-gcm
-  password: "dongtaiwang.com"
+  password: "github.com/Alvin9999"
       
 # - name: tuic-meta2_1
 #   server: 74.63.233.74
