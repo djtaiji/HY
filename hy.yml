@@ -238,10 +238,17 @@ proxies:
   
 - name: dongtaiwang_ss
   type: ss
-  server: 109.104.154.146
-  port: 34567
+  server: 185.22.155.228
+  port: 23456
   cipher: aes-256-gcm
-  password: "github.com/Alvin9999"
+  password: "dongtaiwang.com"
+
+# - name: dongtaiwang_ss2
+#   type: ss
+#   server: 109.104.154.146
+#   port: 34567
+#   cipher: aes-256-gcm
+#   password: "github.com/Alvin9999"
       
 # - name: tuic-meta2_1
 #   server: 74.63.233.74
@@ -296,6 +303,7 @@ proxy-groups:
     - dongtaiwang1
     - dongtaiwang2  
     - dongtaiwang_ss
+    # - dongtaiwang_ss2
     # - tuic-meta2_1
     # - tuic-meta2_2
 
@@ -316,6 +324,7 @@ proxy-groups:
     - dongtaiwang1
     - dongtaiwang2  
     - dongtaiwang_ss
+    # - dongtaiwang_ss2
     # - tuic-meta2_1
     # - tuic-meta2_2
 
@@ -337,6 +346,7 @@ proxy-groups:
     - dongtaiwang1
     - dongtaiwang2  
     - dongtaiwang_ss
+    # - dongtaiwang_ss2
     # - tuic-meta2_1
     # - tuic-meta2_2
 
