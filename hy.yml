@@ -46,17 +46,17 @@ proxies:
 
 - name: dongtaiwang2                      # vless-reality-vision 可以自定义节点名称
   type: vless
-  server: 185.226.172.156                             # 解析的域名或IP
-  port: 22298                                 # 自定义端口
-  uuid: 9c2c632a-c88f-478f-afea-629764427d51   # 自定义 UUID
+  server: 5.199.143.87                             # 解析的域名或IP
+  port: 20528                                 # 自定义端口
+  uuid: f6bcf3c9-d99f-4f5f-bad1-51c16aa9563c   # 自定义 UUID
   network: tcp
   udp: true
   tls: true
   flow: xtls-rprx-vision
   servername: www.yahoo.com                        # 自定义回落域名
   reality-opts: 
-    public-key: 9gabR4G0GdHtht5oD1D9wSCjGs76bMT7zWEaSh6LBGM       # Reality public-key
-    short-id: '8e256e4d'                      # Reality short-id
+    public-key: ueID_PZUuaL5bsu5vjCd8rLmHl3IUb-uj0jRRcSu_x0       # Reality public-key
+    short-id: 'c9edda54'                      # Reality short-id
   client-fingerprint: chrome                  # 自定义浏览器指纹
    
 # - name:  vless-reality-grpc                     # vless-reality-grpc 可以自定义节点名称
