@@ -29,20 +29,20 @@ dns:
 
 # 当前 13 个主流协议节点配置模版，按需求修改，如不需要使用某协议节点，则无需删除，确保代理分流中没有该节点即可
 proxies:
-- name: dongtaiwang1                      # vless-reality-vision 可以自定义节点名称
-  type: vless
-  server: 185.22.153.73                             # 解析的域名或IP
-  port: 25090                                 # 自定义端口
-  uuid: af7f07dc-d726-4b1e-967d-dbb6c594999f   # 自定义 UUID
-  network: tcp
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: www.yahoo.com                        # 自定义回落域名
-  reality-opts: 
-    public-key: JaUyzihmZ70WZdjNflneJnr99G-TXXtqDBeSNAQzHBc       # Reality public-key
-    short-id: 'aff1f4dc'                      # Reality short-id
-  client-fingerprint: chrome                  # 自定义浏览器指纹
+# - name: dongtaiwang1                      # vless-reality-vision 可以自定义节点名称
+#   type: vless
+#   server: 185.22.153.73                             # 解析的域名或IP
+#   port: 25090                                 # 自定义端口
+#   uuid: af7f07dc-d726-4b1e-967d-dbb6c594999f   # 自定义 UUID
+#   network: tcp
+#   udp: true
+#   tls: true
+#   flow: xtls-rprx-vision
+#   servername: www.yahoo.com                        # 自定义回落域名
+#   reality-opts: 
+#     public-key: JaUyzihmZ70WZdjNflneJnr99G-TXXtqDBeSNAQzHBc       # Reality public-key
+#     short-id: 'aff1f4dc'                      # Reality short-id
+#   client-fingerprint: chrome                  # 自定义浏览器指纹
 
 - name: dongtaiwang2                      # vless-reality-vision 可以自定义节点名称
   type: vless
@@ -131,22 +131,22 @@ proxies:
 #     headers:
 #       Host: www.misaka.rest                        # Host 域名，与上面 server 字段的地址一致
 
-# - name: dongtaiwang1                               # vmess-ws 可以自定义节点名称
-#   type: vmess
-#   server: 45.154.207.99                            # 解析的 IP / 域名或优选 IP / 域名
-#   port: 10004                                       # 自定义端口
-#   uuid: 0084b5d0-8966-4398-87f8-d5d8b64aa356       # 自定义 UUID
-#   alterId: 0
-#   cipher: auto
-#   udp: true
-#   tls: false
-#   skip-cert-verify: true
-#   network: ws
-#   servername: none                      # SNI 域名，与下面 Host 一致
-#   ws-opts:
-#     path: "github.com/Alvin9999"              # 自定义 path 路径
-#     headers:
-#       Host: none                        # Host 域名，与上面 server 字段的地址一致
+- name: dongtaiwang1                               # vmess-ws 可以自定义节点名称
+  type: vmess
+  server: 185.22.153.73                            # 解析的 IP / 域名或优选 IP / 域名
+  port: 49663                                       # 自定义端口
+  uuid: af7f07dc-d726-4b1e-967d-dbb6c594999f       # 自定义 UUID
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  servername: none                      # SNI 域名，与下面 Host 一致
+  ws-opts:
+    path: "github.com/Alvin9999"              # 自定义 path 路径
+    headers:
+      Host: none                        # Host 域名，与上面 server 字段的地址一致
 
 # - name: hysteria11                                  # 可以自定义节点名称
 #   type: hysteria
@@ -190,19 +190,19 @@ proxies:
 #   skip-cert-verify: true   # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
 #   fast-open: true
     
-# - name: hysteria14                                  # 可以自定义节点名称
-#   type: hysteria
-#   server: 109.104.152.194                                  # 服务器本地 IP
-#   port: 58510                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
-#   auth-str: dongtaiwang.com                                 # 自定义认证密码
-#   alpn:
-#     - h3
-#   protocol: udp                                    # 自定义协议：udp / wechat-video / faketcp
-#   up: 20                                           # 自定义带宽上传限制
-#   down: 100                                        # 自定义带宽下载限制
-#   sni: bing.com                                # SNI 域名或自签证书的三方域名
-#   skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
-#   fast-open: true
+- name: hysteria14                                  # 可以自定义节点名称
+  type: hysteria
+  server: 185.22.155.71                                  # 服务器本地 IP
+  port: 15424,30000-40000                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
+  auth-str: dongtaiwang.com                                 # 自定义认证密码
+  alpn:
+    - h3
+  protocol: udp                                    # 自定义协议：udp / wechat-video / faketcp
+  up: 20                                           # 自定义带宽上传限制
+  down: 100                                        # 自定义带宽下载限制
+  sni: bing.com                                # SNI 域名或自签证书的三方域名
+  skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
+  fast-open: true
 
 - name: hysteria21                                  # 节点名称
   type: hysteria2
@@ -295,7 +295,7 @@ proxy-groups:
     # - hysteria11 
     # - hysteria12
     # - hysteria13
-    # - hysteria14
+    - hysteria14
     - hysteria21 
     # - hysteria22
     # - hysteria23
@@ -316,7 +316,7 @@ proxy-groups:
     # - hysteria11 
     # - hysteria12
     # - hysteria13
-    # - hysteria14
+    - hysteria14
     - hysteria21 
     # - hysteria22
     # - hysteria23
@@ -338,7 +338,7 @@ proxy-groups:
     # - hysteria11 
     # - hysteria12
     # - hysteria13
-    # - hysteria14
+    - hysteria14
     - hysteria21 
     # - hysteria22
     # - hysteria23
