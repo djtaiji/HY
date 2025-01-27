@@ -238,7 +238,7 @@ proxies:
   
 - name: dongtaiwang_ss
   type: ss
-  server: 163.172.118.110
+  server: 163.172.121.25
   port: 12345
   cipher: aes-256-gcm
   password: "dongtaiwang.com"
