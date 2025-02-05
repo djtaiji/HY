@@ -193,7 +193,7 @@ proxies:
 - name: hysteria14                                  # 可以自定义节点名称
   type: hysteria
   server: 185.22.155.71                                  # 服务器本地 IP
-  port: 15424,30000-40000                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
+  port: 15424                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
   auth-str: dongtaiwang.com                                 # 自定义认证密码
   alpn:
     - h3
