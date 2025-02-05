@@ -29,22 +29,22 @@ dns:
 
 # 当前 13 个主流协议节点配置模版，按需求修改，如不需要使用某协议节点，则无需删除，确保代理分流中没有该节点即可
 proxies:
-# - name: dongtaiwang1                      # vless-reality-vision 可以自定义节点名称
-#   type: vless
-#   server: 185.22.153.73                             # 解析的域名或IP
-#   port: 25090                                 # 自定义端口
-#   uuid: af7f07dc-d726-4b1e-967d-dbb6c594999f   # 自定义 UUID
-#   network: tcp
-#   udp: true
-#   tls: true
-#   flow: xtls-rprx-vision
-#   servername: www.yahoo.com                        # 自定义回落域名
-#   reality-opts: 
-#     public-key: JaUyzihmZ70WZdjNflneJnr99G-TXXtqDBeSNAQzHBc       # Reality public-key
-#     short-id: 'aff1f4dc'                      # Reality short-id
-#   client-fingerprint: chrome                  # 自定义浏览器指纹
-
 - name: dongtaiwang2                      # vless-reality-vision 可以自定义节点名称
+  type: vless
+  server: 163.172.122.94                             # 解析的域名或IP
+  port: 19188                                 # 自定义端口
+  uuid: 22a54b72-9c39-4bb0-97d0-41bbaaca2a67   # 自定义 UUID
+  network: tcp
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: www.yahoo.com                        # 自定义回落域名
+  reality-opts: 
+    public-key: tVDaWxsy54q7yRNRdJ718Gyt2HDoh_3R2y_PX22hhjM       # Reality public-key
+    short-id: '95c93be9'                      # Reality short-id
+  client-fingerprint: chrome                  # 自定义浏览器指纹
+
+- name: dongtaiwang22                      # vless-reality-vision 可以自定义节点名称
   type: vless
   server: 195.154.200.156                             # 解析的域名或IP
   port: 19188                                 # 自定义端口
@@ -134,7 +134,7 @@ proxies:
 - name: dongtaiwang1                               # vmess-ws 可以自定义节点名称
   type: vmess
   server: 185.22.153.73                            # 解析的 IP / 域名或优选 IP / 域名
-  port: 49663                                       # 自定义端口
+  port: 43372                                       # 自定义端口
   uuid: af7f07dc-d726-4b1e-967d-dbb6c594999f       # 自定义 UUID
   alterId: 0
   cipher: auto
@@ -238,8 +238,8 @@ proxies:
   
 - name: dongtaiwang_ss
   type: ss
-  server: 163.172.121.25
-  port: 12345
+  server: 46.17.40.157
+  port: 11111
   cipher: aes-256-gcm
   password: "dongtaiwang.com"
 
