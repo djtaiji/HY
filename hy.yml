@@ -301,7 +301,8 @@ proxy-groups:
     # - hysteria23
     # - hysteria24
     - dongtaiwang1
-    - dongtaiwang2  
+    - dongtaiwang2
+    - dongtaiwang22
     - dongtaiwang_ss
     # - dongtaiwang_ss2
     # - tuic-meta2_1
@@ -322,7 +323,8 @@ proxy-groups:
     # - hysteria23
     # - hysteria24
     - dongtaiwang1
-    - dongtaiwang2  
+    - dongtaiwang2
+    - dongtaiwang22
     - dongtaiwang_ss
     # - dongtaiwang_ss2
     # - tuic-meta2_1
@@ -344,7 +346,8 @@ proxy-groups:
     # - hysteria23
     # - hysteria24
     - dongtaiwang1
-    - dongtaiwang2  
+    - dongtaiwang2
+    - dongtaiwang22
     - dongtaiwang_ss
     # - dongtaiwang_ss2
     # - tuic-meta2_1
