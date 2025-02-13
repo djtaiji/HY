@@ -203,6 +203,17 @@ proxies:
   sni: apple.com                                # SNI 域名或自签证书的三方域名
   skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
   fast-open: true
+  insecure": true
+  recv_window_conn": 57671680
+  recv_window": 230686720
+  disable_mtu_discovery": true
+  resolver": "https://223.5.5.5/dns-query"
+  retry": 3
+  retry_interval": 3
+  quit_on_disconnect": false
+  handshake_timeout": 15
+  idle_timeout": 30
+  hop_interval": 120
 
 - name: hysteria21                                  # 节点名称
   type: hysteria2
