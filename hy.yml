@@ -134,7 +134,7 @@ proxies:
 - name: dongtaiwang1                               # vmess-ws 可以自定义节点名称
   type: vmess
   server: 185.22.153.73                            # 解析的 IP / 域名或优选 IP / 域名
-  port: 43372                                       # 自定义端口
+  port: 13039                                       # 自定义端口
   uuid: af7f07dc-d726-4b1e-967d-dbb6c594999f       # 自定义 UUID
   alterId: 0
   cipher: auto
@@ -193,21 +193,21 @@ proxies:
 - name: hysteria14                                  # 可以自定义节点名称
   type: hysteria
   server: 185.22.155.71                                  # 服务器本地 IP
-  port: 15424                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
+  port: 63717                                      # 自定义端口，如使用端口跳跃则改为 ports: 1000,2000-3000
   auth-str: dongtaiwang.com                                 # 自定义认证密码
   alpn:
     - h3
   protocol: udp                                    # 自定义协议：udp / wechat-video / faketcp
   up: 20                                           # 自定义带宽上传限制
   down: 100                                        # 自定义带宽下载限制
-  sni: bing.com                                # SNI 域名或自签证书的三方域名
+  sni: apple.com                                # SNI 域名或自签证书的三方域名
   skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
   fast-open: true
 
 - name: hysteria21                                  # 节点名称
   type: hysteria2
   server: 46.17.41.189                                 # 服务器 IP
-  port: 50717                                       # 节点端口，目前暂不支持端口跳跃
+  port: 51224                                       # 节点端口，目前暂不支持端口跳跃
   password: dongtaiwang.com                              # 节点认证密码
   sni: www.bing.com                             # SNI 域名或自签证书的三方域名
   skip-cert-verify: true                           # 使用自签证书请保持此处为 true，如为 CA 证书建议修改为 false
@@ -238,8 +238,8 @@ proxies:
   
 - name: dongtaiwang_ss
   type: ss
-  server: 46.17.40.157
-  port: 11111
+  server: 185.22.153.82
+  port: 12345
   cipher: aes-256-gcm
   password: "dongtaiwang.com"
 
