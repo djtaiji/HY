@@ -134,7 +134,7 @@ proxies:
 - name: dongtaiwang1                               # vmess-ws 可以自定义节点名称
   type: vmess
   server: 185.22.153.73                            # 解析的 IP / 域名或优选 IP / 域名
-  port: 13039                                       # 自定义端口
+  port: 37599                                       # 自定义端口
   uuid: af7f07dc-d726-4b1e-967d-dbb6c594999f       # 自定义 UUID
   alterId: 0
   cipher: auto
@@ -239,7 +239,7 @@ proxies:
 - name: dongtaiwang_ss
   type: ss
   server: 185.22.153.82
-  port: 12345
+  port: 23456
   cipher: aes-256-gcm
   password: "dongtaiwang.com"
 
